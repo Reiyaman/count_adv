@@ -10,7 +10,7 @@ before do
 end
 
 get '/' do
-  'こんばんはー'
+  redirect '/count'
 end
 
 get '/count' do
@@ -28,6 +28,13 @@ end
 post '/minus' do
   count = Count.first
   count.number = count.number - 1
+  count.save
+  redirect '/count'
+end
+
+post '/clear' do
+  count = Count.first
+  count.number = 0
   count.save
   redirect '/count'
 end

@@ -7,31 +7,77 @@ body{
     /* 全体を中央寄せ */
     margin: auto;
     /* 全体の余白 */
-    padding: 10px;
+    padding: 50px;
+    
+    background: #00b5de;
 }
 
-/* 数字 */
+/* 数字 通常*/
 h1{
     margin: auto;
     
+    font-size: 6.0em;
     /* 文字の太さ */
-    font-weight: 100;
+    font-weight: 400;
     
     /* 文字を中央寄せ */
     text-align: center;
     
     /* 横幅 */
-    width: 100px;
+    width: 250px;
     
     /* 縦幅 */
-    height: 100px;
-    line-height: 100px;
+    height: 250px;
+    line-height: 250px;
     
     /* 枠の太さ 線の種類 色 */
-    border: 1px solid #009688;
+    border: 2px solid #d8d8d8;
     
     /* 枠を丸くする */
     border-radius: 50%;
+}
+
+
+/* 数字 3の倍数または、3がつく数字の時*/
+h2{
+    margin: auto;
+    
+    font-size: 6.0em;
+    /* 文字の太さ */
+    font-weight: 400;
+    
+    /* 文字を中央寄せ */
+    text-align: center;
+    
+    /* 横幅 */
+    width: 250px;
+    
+    /* 縦幅 */
+    height: 250px;
+    line-height: 250px;
+    
+    /* 枠の太さ 線の種類 色 */
+    border: 2px solid #f8b516;
+    
+    /* 枠を丸くする */
+    border-radius: 50%;
+}
+
+/* 通常時 */
+s1{
+    color: #edda15;
+}
+/* 3の倍数の時 */
+s2{
+    color: #d01026;
+}
+/* 5の倍数の時 */
+s3{
+    color: #ec6c1f;
+}
+/* 15の倍数の時 */
+s4{
+    color: #2a6d39;
 }
 
 /* ボタン共通 */
@@ -41,7 +87,7 @@ input{
     display: block;
     margin: auto;
     
-    width: 80%;
+    width: 120%;
     text-align: center;
     
     /* 上との余白 */
@@ -55,14 +101,19 @@ input{
 input[value="+"]{
     
     /* 文字の色 */
-    color: #f9f9f9;
+    color: #d8d8d8;
     
     /* 背景 */
-    background: #448AFF;
+    background: #e94c4d;
 }
 
 /* マイナスボタン */
 input[value="-"]{
-    color: #f9f9f9;
-    background: #F44336;
+    color: #d8d8d8;
+    background: #c2ca2e;
+}
+
+input[value="clear"]{
+    color: #d8d8d8;
+    background: #f8b516;
 }
