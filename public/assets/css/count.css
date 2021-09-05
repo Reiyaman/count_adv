@@ -35,6 +35,8 @@ h1{
     
     /* 枠を丸くする */
     border-radius: 50%;
+    
+    margin-top: 20px;
 }
 
 
@@ -61,6 +63,8 @@ h2{
     
     /* 枠を丸くする */
     border-radius: 50%;
+    
+    margin-top: 20px;
 }
 
 /* 通常時 */
@@ -116,4 +120,18 @@ input[value="-"]{
 input[value="clear"]{
     color: #d8d8d8;
     background: #f8b516;
+}
+
+input[value="×2"]{
+    
+    /* 文字の色 */
+    color: #d8d8d8;
+    
+    /* 背景 */
+    background: #0000f9;
+}
+
+input[value="÷2"]{
+    color: #d8d8d8;
+    background: #ffff41;
 }

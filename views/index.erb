@@ -23,10 +23,54 @@
     <form action="/plus" method="post">
       <input type="submit" value="+">
     </form>
+    
     <form action="/minus" method="post">
       <input type="submit" value="-">
     </form>
+    
+    <form action = "/kakeru" method = "post">
+      <input type = "submit" value = "×2">
+    </form>
+    
+    <form action = "/waru" method = "post">
+      <input type = "submit" value = "÷2">
+    </form>
+    
     <form action="/clear" method="post">
       <input type="submit" value="clear">
+    </form>
+    
+    <%  if @number2 == 0 %>
+      <h1><s1><%= @number2 %></s1></h1>
+    <% elsif @number2 % 3 == 0 %>
+      <h2><s2><%= @number2 %></s2></h2>
+    <% elsif @number2 % 5 == 0 %>
+      <h1><s3><%= @number2 %></s3></h1>
+    <% elsif @number2 % 15 == 0 %>
+      <h1><s4><%= @number2 %></s1></h4>
+    <% elsif @number2.to_s.include?("3") %>
+      <h2><s1><%= @number2 %></s1></h2>
+    <% else %>
+      <h1><s1><%= @number2 %></s1></h1>
+    <% end %>
+    <form action="/plus2" method="post">
+      <input type="submit" value="+">
+    </form>
+    
+    <form action="/minus2" method="post">
+      <input type="submit" value="-">
+    </form>
+    
+    <form action = "/kakeru2" method = "post">
+      <input type = "submit" value = "×2">
+    </form>
+    
+    <form action = "/waru2" method = "post">
+      <input type = "submit" value = "÷2">
+    </form>
+    
+    <form action="/clear2" method="post">
+      <input type="submit" value="clear">
+    </form>
   </body>
 </html>
