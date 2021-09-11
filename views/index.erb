@@ -7,70 +7,51 @@
     <link rel="stylesheet" href="/assets/css/count.css">
   </head>
   <body>
-    <%  if @number == 0 %>
-      <h1><s1><%= @number %></s1></h1>
-    <% elsif @number % 3 == 0 %>
-      <h2><s2><%= @number %></s2></h2>
-    <% elsif @number % 5 == 0 %>
-      <h1><s3><%= @number %></s3></h1>
-    <% elsif @number % 15 == 0 %>
-      <h1><s4><%= @number %></s1></h4>
-    <% elsif @number.to_s.include?("3") %>
-      <h2><s1><%= @number %></s1></h2>
-    <% else %>
-      <h1><s1><%= @number %></s1></h1>
-    <% end %>
-    <form action="/plus" method="post">
+    
+    <form action = "/addcount" method = "post">
+      <input type = "submit" value = "NEW COUNTER">
+    </form>
+    
+    <% @numbers.each do |counter| %>
+      <% if counter.number == 0 %>
+        <h1><s1><%= counter.number %></s1></h1>
+      <% elsif counter.number % 3 == 0 %>
+        <h2><s2><%= counter.number %></s2></h2>
+      <% elsif counter.number % 5 == 0 %>
+        <h1><s3><%= counter.number %></s3></h1>
+      <% elsif counter.number % 15 == 0 %>
+        <h1><s4><%= counter.number %></s1></h4>
+      <% elsif counter.number.to_s.include?("3") %>
+        <h2><s1><%= counter.number %></s1></h2>
+      <% else %>
+        <h1><s1><%= counter.number %></s1></h1>
+      <% end %>
+    
+    <form action="/plus/<%= counter.id %>" method="post">
       <input type="submit" value="+">
     </form>
     
-    <form action="/minus" method="post">
+    <form action="/minus/<%= counter.id %>" method="post">
       <input type="submit" value="-">
     </form>
     
-    <form action = "/kakeru" method = "post">
+    <form action = "/kakeru/<%= counter.id %>" method = "post">
       <input type = "submit" value = "×2">
     </form>
     
-    <form action = "/waru" method = "post">
+    <form action = "/waru/<%= counter.id %>" method = "post">
       <input type = "submit" value = "÷2">
     </form>
     
-    <form action="/clear" method="post">
+    <form action="/clear/<%= counter.id %>" method="post">
       <input type="submit" value="clear">
     </form>
     
-    <%  if @number2 == 0 %>
-      <h1><s1><%= @number2 %></s1></h1>
-    <% elsif @number2 % 3 == 0 %>
-      <h2><s2><%= @number2 %></s2></h2>
-    <% elsif @number2 % 5 == 0 %>
-      <h1><s3><%= @number2 %></s3></h1>
-    <% elsif @number2 % 15 == 0 %>
-      <h1><s4><%= @number2 %></s1></h4>
-    <% elsif @number2.to_s.include?("3") %>
-      <h2><s1><%= @number2 %></s1></h2>
-    <% else %>
-      <h1><s1><%= @number2 %></s1></h1>
-    <% end %>
-    <form action="/plus2" method="post">
-      <input type="submit" value="+">
+    <form action = "/delete/<%= counter.id %>" method = "post">
+      <input type = "submit" value = "delete">
     </form>
     
-    <form action="/minus2" method="post">
-      <input type="submit" value="-">
-    </form>
+  <% end %>
     
-    <form action = "/kakeru2" method = "post">
-      <input type = "submit" value = "×2">
-    </form>
-    
-    <form action = "/waru2" method = "post">
-      <input type = "submit" value = "÷2">
-    </form>
-    
-    <form action="/clear2" method="post">
-      <input type="submit" value="clear">
-    </form>
   </body>
 </html>

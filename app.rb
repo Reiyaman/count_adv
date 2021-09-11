@@ -13,79 +13,53 @@ get '/' do
   redirect '/count'
 end
 
+post '/addcount' do
+  Count.create(number: 0)
+  @numbers = Count.all
+  redirect '/count'
+end
+
 get '/count' do
-  @number = Count.first.number
-  Count.create!(number: "number2")
-  @number2 = Count.second.number
+  @numbers = Count.all.order(id: :desc)
   erb :index
 end
 
-post '/plus' do
-  count = Count.first
+post '/plus/:id' do
+  count = Count.find(params[:id])
   count.number = count.number + 1
   count.save
   redirect '/count'
 end
 
-post '/minus' do
-  count = Count.first
+post '/minus/:id' do
+  count = Count.find(params[:id])
   count.number = count.number - 1
   count.save
   redirect '/count'
 end
 
-post '/clear' do
-  count = Count.first
+post '/clear/:id' do
+  count = Count.find(params[:id])
   count.number = 0
   count.save
   redirect '/count'
 end
 
-post '/kakeru' do
-  count = Count.first
+post '/kakeru/:id' do
+  count = Count.find(params[:id])
   count.number = count.number * 2
   count.save
   redirect '/count'
 end
 
-post '/waru' do
-  count = Count.first
+post '/waru/:id' do
+  count = Count.find(params[:id])
   count.number = count.number / 2
   count.save
   redirect '/count'
 end
 
-post '/plus2' do
-  count2 = Count.second
-  count2.number = count2.number + 1
-  count2.save
-  redirect '/count'
-end
-
-post '/minus2' do
-  count2 = Count.second
-  count2.number = count2.number - 1
-  count.save
-  redirect '/count'
-end
-
-post '/clear2' do
-  count2 = Count.second
-  count2.number = 0
-  count2.save
-  redirect '/count'
-end
-
-post '/kakeru2' do
-  count2 = Count.second
-  count2.number = count2.number * 2
-  count2.save
-  redirect '/count'
-end
-
-post '/waru2' do
-  count2 = Count.second
-  count2.number = count2.number / 2
-  count2.save
+post '/delete/:id' do
+  Count.find(params[:id]).destroy
   redirect '/count'
 end

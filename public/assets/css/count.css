@@ -135,3 +135,26 @@ input[value="÷2"]{
     color: #d8d8d8;
     background: #ffff41;
 }
+
+input[value="更新"]{
+    
+    width: 30%;
+    text-align: center;
+    color: #d8d8d8;
+    background: #ffff41;
+}
+
+input[name = "x"]{
+    color: #d8d8d8;
+    background: white;
+}
+
+input[value = "NEW COUNTER"]{
+    color: #d8d8d8;
+    background: #d01026;
+}
+
+input[value = "delete"]{
+    color: #d8d8d8;
+    background: black;
+}
